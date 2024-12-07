@@ -1,7 +1,7 @@
 class Repeller {
     constructor(x, y) {
-        this.pos = createVector(x, y); // 위치
-        this.size = 30; // 크기
+        this.pos = createVector(x, y); // Repeller 위치
+        this.size = 30; // Repeller 크기
         this.strength = -50; // 밀어내는 힘의 크기
     }
 
@@ -10,7 +10,7 @@ class Repeller {
         let dir = particle.pos.copy().sub(this.pos); // Repeller에서 파티클로 향하는 방향
         let distance = constrain(dir.mag(), 5, 100); // 거리 제한
         dir.normalize();
-        let force = this.strength / (distance * distance); // 거리 제곱 반비례 힘
+        let force = this.strength / (distance * distance); // 거리의 제곱 반비례로 힘 계산
         dir.mult(force);
         return dir;
     }
