@@ -16,7 +16,7 @@ class Particle {
         this.pos.add(this.vel);
         this.acc.mult(0);
 
-        // 화면 밖으로 나가면 재설정
+        // 화면 밖으로 나가면 위치 재설정
         if (this.pos.x < 0 || this.pos.x > width || this.pos.y < 0 || this.pos.y > height) {
             this.pos.x = random(width);
             this.pos.y = random(height);
